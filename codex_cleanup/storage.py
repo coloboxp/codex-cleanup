@@ -371,7 +371,7 @@ def snapshot(settings):
                 unknown.add(tid)
             last[tid] = max(last.get(tid, 0), date or 0, before.st_mtime)
             refs = source_references(header.get("source"))
-            if header.get("forked_from_id"):
+            if header.get("forked_from_id") is not None:
                 refs.append(thread_id(header["forked_from_id"]))
             if header.get("history_base") is not None:
                 history_base = header["history_base"]

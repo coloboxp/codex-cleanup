@@ -4,6 +4,12 @@ Notable changes are recorded here. Alpha behavior and formats may change without
 ## Unreleased
 No changes yet.
 
+## 0.1.0a2 — 2026-10-12
+### Fixed
+- Refuse malformed non-null fork ancestry, including empty or false values, instead of treating it as absent.
+- Use the package version consistently in the stdio handshake.
+- Add synthetic regressions for all affected value types.
+
 ## 0.1.0a1 — 2026-10-12
 Initial source-only alpha.
 

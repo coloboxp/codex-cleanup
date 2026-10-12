@@ -10,7 +10,7 @@ from pathlib import Path
 
 from .errors import CleanupError
 
-VERSION = "0.1.0a1"
+VERSION = "0.1.0a2"
 
 
 def thread_id(value):

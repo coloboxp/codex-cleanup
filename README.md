@@ -1,7 +1,7 @@
 # codex-cleanup
 A dependency-free Python library and CLI for reviewing and removing old **archived** Codex conversations—not projects or workspace files.
 
-**Alpha (`0.1.0a1`): deletion is irreversible. Back up your Codex and SQLite homes first. This is not an official OpenAI tool.**
+**Alpha (`0.1.0a2`): deletion is irreversible. Back up your Codex and SQLite homes first. This is not an official OpenAI tool.**
 
 ## Quick start
 Download this repository using **Code → Download ZIP**, or clone it. Open the extracted/cloned directory. Nothing to install; no package registry is required.

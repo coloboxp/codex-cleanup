@@ -16,6 +16,18 @@ from tests.test_cleanup import Fixture
 
 
 class RegressionTests(Fixture):
+    def test_malformed_falsy_fork_ancestry_refused(self):
+        self.store.add(1)
+        child = self.store.add(2, archived=False, parent=1)
+        lines = child.read_text().splitlines(keepends=True)
+        for value in ("", [], {}, 0, False):
+            with self.subTest(value=value):
+                envelope = json.loads(lines[0])
+                envelope["payload"]["forked_from_id"] = value
+                child.write_text(json.dumps(envelope) + "\n" + "".join(lines[1:]))
+                with self.assertRaises(CleanupError):
+                    scan(self.store.settings)
+
     def test_recent_archive_or_recency_date_protects_old_body(self):
         self.store.add(1)
         self.store.sql("state_5.sqlite", "ALTER TABLE threads ADD COLUMN recency_at_ms INTEGER")

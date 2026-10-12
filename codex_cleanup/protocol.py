@@ -9,6 +9,7 @@ import subprocess
 import time
 
 from .errors import ProtocolError
+from .models import VERSION
 
 
 class StdioClient:
@@ -95,7 +96,7 @@ class StdioClient:
         initialized = self.request(
             "initialize",
             {
-                "clientInfo": {"name": "codex_cleanup", "version": "0.1.0a1"},
+                "clientInfo": {"name": "codex_cleanup", "version": VERSION},
                 "capabilities": {"experimentalApi": True, "explicitGatewayOauth": True},
             },
         )
