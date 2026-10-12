@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+"""Convenience launcher; no installation needed."""
+
+from codex_cleanup.__main__ import main
+
+raise SystemExit(main())
